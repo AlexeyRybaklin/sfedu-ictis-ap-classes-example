@@ -5,26 +5,15 @@
 #include "Triangle.h"
 #include <iostream>
 
-Triangle::Triangle(int a, int b, int c) : Figure(convertLengthsToPoints(a, b, c), 3)
+Triangle::Triangle(Point* p1, Point* p2, Point* p3) : Figure(new Point* [3]{ new Point(p1->getX() , p1->getY()) , new Point(p2->getX() , p2->getY()) , new Point(p3->getX() , p3->getY()) }, 3)
 {
-
+	po = Figure::points;
 }
 
 Triangle::~Triangle()
 {
 	std::cout << "I am destructor \n";
 }
-
-Point** Triangle::convertLengthsToPoints(int a, int b, int c)
-{
-	Point** point = new Point *[3];
-	point[0] = new Point(a, 0);
-	point[1] = new Point(a, b);
-	point[2] = new Point(b, c);
-
-	return point;
-}
-
 
 int Triangle::perimeter()
 {
@@ -42,6 +31,6 @@ int Triangle::perimeter()
 
 int Triangle::area()
 {
-	std::cout << "Rectangle Implementation area" << std::endl;
+	std::cout << "Triangle Implementation area" << std::endl;
 	return (int)(this->points[0]->distance(this->points[1]) * this->points[1]->distance(this->points[2]));
 }

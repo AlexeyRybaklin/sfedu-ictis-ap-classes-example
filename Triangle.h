@@ -15,15 +15,13 @@ class Triangle : public Figure {
 //you should define methods and constructor/destructor prototypes here and implement them in Triangle.cpp file
 //constructor must use the pointers to 3 apexes of the triangle.
 private:
-
-	int a, b, c;
+	Point** po;
 
 public:
 
-	Triangle(int a, int b, int c);
+	Triangle(Point *a, Point *b, Point *c);
 	~Triangle();
 
-	Point** convertLengthsToPoints(int a, int b, int c);
 
 	int perimeter() override;
 	int area() override;

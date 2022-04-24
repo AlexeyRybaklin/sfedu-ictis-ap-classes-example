@@ -5,6 +5,7 @@
 #ifndef CLASSES_CIRCLE_H
 #define CLASSES_CIRCLE_H
 
+#include <iostream>
 #include "Figure.h"
 
 /**
@@ -12,6 +13,10 @@
  *
  */
 class Circle : public Figure {
+    
+    Point** p;
+    int r;
+
 public:
     Circle(Point *center, int radius);
 
